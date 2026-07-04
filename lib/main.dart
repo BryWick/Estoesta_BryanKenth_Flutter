@@ -27,9 +27,14 @@ class CounterScreen extends StatefulWidget {
 class _CounterScreenState extends State<CounterScreen> {
   int _counter = 0;
 
-  void incrementCounter() {
+  void _incrementCounter() {
     setState(() {
       _counter++;
+    });
+  }
+  void _decrementCounter() {
+    setState(() {
+      _counter--;
     });
   }
 
@@ -68,9 +73,22 @@ class _CounterScreenState extends State<CounterScreen> {
           ]
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: incrementCounter,
-        child: const Icon(Icons.add),
+      floatingActionButton: Column(
+        mainAxisAlignment:  MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: _incrementCounter,
+            heroTag: 'increment',
+            child: const Icon(Icons.add),
+          ),
+          const SizedBox(height: 12),
+          FloatingActionButton(
+            onPressed: _decrementCounter,
+            heroTag: 'decrement',
+            backgroundColor: Colors.deepPurple.shade200,
+            child: const Icon(Icons.remove),
+          ),
+        ],
       ),
     );
   }
