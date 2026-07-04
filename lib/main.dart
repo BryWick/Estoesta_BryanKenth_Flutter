@@ -34,11 +34,12 @@ class _CounterScreenState extends State<CounterScreen> {
   }
   void _decrementCounter() {
     setState(() {
+      if (_counter > 0) {
       _counter--;
+      }
     });
   }
-
-  @override
+      @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.deepPurple.shade50,
@@ -88,7 +89,7 @@ class _CounterScreenState extends State<CounterScreen> {
           ),
           const SizedBox(height: 12),
           FloatingActionButton(
-            onPressed: _decrementCounter,
+            onPressed: _counter > 0 ?_decrementCounter : null,
             heroTag: 'decrement',
             backgroundColor: Colors.deepPurple.shade200,
             child: const Icon(Icons.remove),
