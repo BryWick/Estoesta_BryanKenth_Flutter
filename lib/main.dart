@@ -50,9 +50,23 @@ class _CounterScreenState extends State<CounterScreen> {
             Text(
               '$_counter',
               style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-            ), // Text
+            ),
+            const Align(
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 20.0),
+                  child: Text(
+                    'Created by: Bryan Kenth',
+                    style: TextStyle(
+                    fontSize: 14,
+                    fontStyle: FontStyle.italic,
+                    color: Colors.deepPurple,
+                  ), 
+                ), 
+              ), 
+            ), 
           ]
-        ), // Column
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: incrementCounter,
