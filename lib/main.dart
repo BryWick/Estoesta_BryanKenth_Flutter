@@ -45,6 +45,8 @@ class _CounterScreenState extends State<CounterScreen> {
       backgroundColor: Colors.deepPurple.shade50,
       appBar: AppBar(
         title: const Text('My First Flutter App'),
+        backgroundColor: Colors.deepPurple,
+        foregroundColor: Colors.white,
       ),
             body: Stack(
         children: [
